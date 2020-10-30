@@ -1,18 +1,18 @@
 $(function() {
-    gteUserInfo()
+        gteUserInfo()
 
-    var layer = layui.layer
-    $('#btnlogout').on('click', function() {
-        layer.confirm('是否确定退出?', { icon: 3, title: '提示' }, function(index) {
-            //do something
-            localStorage.removeItem('token') //清空本地token
-            location.href = '/login.html' //跳转登录页面
-            layer.close(index); //关闭弹出层
-        });
+        var layer = layui.layer
+        $('#btnlogout').on('click', function() {
+            layer.confirm('是否确定退出?', { icon: 3, title: '提示' }, function(index) {
+                //do something
+                localStorage.removeItem('token') //清空本地token
+                location.href = '/login.html' //跳转登录页面
+                layer.close(index); //关闭弹出层
+            });
+        })
+
     })
-
-})
-
+    // 获取表单信息
 function gteUserInfo() {
     $.ajax({
         method: 'GET',
@@ -28,7 +28,7 @@ function gteUserInfo() {
     })
 }
 
-
+// 渲染头像
 function renderAvatar(user) {
     var name = user.nickname || user.username
     $('#welcome').html('欢迎' + name)
