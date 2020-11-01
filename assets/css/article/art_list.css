@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 15px;
+    background-color: #f2f3f5;
+}
+
+.layui-form {
+    padding-top: 20px;
+    padding-right: 30px;
+}
